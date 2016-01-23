@@ -28,7 +28,8 @@ void Game::gameLoop() {
 
 	this->_player = AnimatedSprite(graphics, "MyChar.png", 0, 0, 16, 16, 100, 100, 100);
 	this->_player.setupAnimations();
-	this->_player.playAnimation("RunLeft");
+	//this->_player.playAnimation("RunLeft");
+	this->_player.playAnimation("RunRight");
 
 	int LAST_UPDATE_TIME = SDL_GetTicks();
 	// start the game loop
