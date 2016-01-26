@@ -26,10 +26,8 @@ void Game::gameLoop() {
 	Input input;
 	SDL_Event event;
 
-	this->_player = AnimatedSprite(graphics, "MyChar.png", 0, 0, 16, 16, 100, 100, 100);
-	this->_player.setupAnimations();
-	//this->_player.playAnimation("RunLeft");
-	this->_player.playAnimation("RunRight");
+	this->_player = Player(graphics, 100, 100);
+	this->_level = Level("map 1", Vector2(100,100), graphics);
 
 	int LAST_UPDATE_TIME = SDL_GetTicks();
 	// start the game loop
@@ -53,6 +51,16 @@ void Game::gameLoop() {
 		if (input.wasKeyPressed(SDL_SCANCODE_ESCAPE) == true) {
 			return;
 		}
+		else if (input.isKeyHeld(SDL_SCANCODE_LEFT) == true) {
+			this->_player.MoveLeft();
+		}
+		else if (input.isKeyHeld(SDL_SCANCODE_RIGHT) == true) {
+			this->_player.MoveRight();
+		}
+		
+		if (!input.isKeyHeld(SDL_SCANCODE_LEFT) && !input.isKeyHeld(SDL_SCANCODE_RIGHT)) {
+			this->_player.stopMoving();
+		}
 
 		const int CURRENT_TIME_MS = SDL_GetTicks();
 		int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
@@ -65,10 +73,13 @@ void Game::gameLoop() {
 
 void Game::draw(Graphics &graphics) {
 	graphics.clear();
-	this->_player.draw(graphics, 100, 100);
+	this->_level.draw(graphics);
+	this->_player.draw(graphics);
+
 	graphics.flip();
 }
 
 void Game::update(float elapsedTime) {
 	this->_player.update(elapsedTime);
+	this->_level.update(elapsedTime);
 }
