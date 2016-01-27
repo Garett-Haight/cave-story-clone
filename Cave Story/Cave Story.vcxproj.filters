@@ -16,6 +16,9 @@
     <Filter Include="Resource Files\sprites">
       <UniqueIdentifier>{1ff8f614-60cf-4ef9-9165-ff0dd3f6df44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\maps">
+      <UniqueIdentifier>{b512bf62-1aac-40e8-9fff-046490b54659}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -43,6 +46,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="tinyxml2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,10 +80,18 @@
     <ClInclude Include="tinyxml2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\x64\Release\MyChar.png">
       <Filter>Resource Files\sprites</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="maps\Map 1.tmx">
+      <Filter>Resource Files\maps</Filter>
+    </None>
   </ItemGroup>
 </Project>
