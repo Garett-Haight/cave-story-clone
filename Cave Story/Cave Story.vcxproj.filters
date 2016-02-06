@@ -19,6 +19,9 @@
     <Filter Include="Resource Files\maps">
       <UniqueIdentifier>{b512bf62-1aac-40e8-9fff-046490b54659}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\tilesets">
+      <UniqueIdentifier>{d250117f-8def-4022-befb-99b85a3acaa4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -83,10 +86,25 @@
     <ClInclude Include="tile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="rectangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="slope.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\x64\Release\MyChar.png">
       <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="tilesets\PrtCave.png">
+      <Filter>Resource Files\tilesets</Filter>
+    </Image>
+    <Image Include="tilesets\NpcSym.png">
+      <Filter>Resource Files\tilesets</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

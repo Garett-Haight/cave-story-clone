@@ -156,12 +156,17 @@
     <ClInclude Include="input.h" />
     <ClInclude Include="level.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="rectangle.h" />
+    <ClInclude Include="slope.h" />
     <ClInclude Include="sprite.h" />
     <ClInclude Include="tile.h" />
     <ClInclude Include="tinyxml2.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\x64\Release\MyChar.png" />
+    <Image Include="tilesets\NpcSym.png" />
+    <Image Include="tilesets\PrtCave.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="maps\Map 1.tmx" />
