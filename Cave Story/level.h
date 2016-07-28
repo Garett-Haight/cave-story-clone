@@ -5,6 +5,7 @@
 #include "tile.h"
 #include "rectangle.h"
 #include "slope.h"
+#include "animatedTile.h"
 
 #include <string>
 #include <vector>
@@ -26,7 +27,7 @@ public:
 	void draw(Graphics &graphics);
 
 	std::vector<Rectangle> checkTileCollisions(const Rectangle &other);
-	std::vector<Slope> checkSlopeCollosions(const Rectangle &other);
+	std::vector<Slope> checkSlopeCollisions(const Rectangle &other);
 
 	const Vector2 getPlayerSpawnPoint() const;
 private:
@@ -43,8 +44,11 @@ private:
 	std::vector<Rectangle> _collisionRects;
 	std::vector<Slope> _slopes;
 
-	void loadMap(std::string mapName, Graphics &graphics);
+	std::vector<AnimatedTile> _animatedTileList;
+	std::vector<AnimatedTileInfo> _animatedTileInfos;
 
+	void loadMap(std::string mapName, Graphics &graphics);
+	Vector2 getTilesetPosition(Tileset tls, int gid, int tileWidth, int tileHeight);
 
 
 };

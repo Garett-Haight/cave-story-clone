@@ -96,7 +96,7 @@ void Game::update(float elapsedTime) {
 	}
 
 	std::vector<Slope> otherSlopes;
-	if ((otherSlopes = this->_level.checkSlopeCollosions(this->_player.getBoundingBox())).size() > 0) {
+	if ((otherSlopes = this->_level.checkSlopeCollisions(this->_player.getBoundingBox())).size() > 0) {
 		this->_player.handleSlopeCollisions(otherSlopes);
 	}
 }

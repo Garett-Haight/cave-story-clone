@@ -5,8 +5,26 @@
  </tileset>
  <tileset firstgid="81" name="NpcSym" tilewidth="16" tileheight="16" tilecount="300" columns="20">
   <image source="tilesets/NpcSym.png" trans="ff00ff" width="320" height="240"/>
+  <tile id="18">
+   <animation>
+    <frame tileid="18" duration="10"/>
+    <frame tileid="19" duration="10"/>
+   </animation>
+  </tile>
+  <tile id="26">
+   <animation>
+    <frame tileid="26" duration="100"/>
+    <frame tileid="27" duration="100"/>
+    <frame tileid="28" duration="100"/>
+    <frame tileid="29" duration="100"/>
+    <frame tileid="30" duration="100"/>
+    <frame tileid="31" duration="100"/>
+    <frame tileid="32" duration="100"/>
+    <frame tileid="33" duration="100"/>
+   </animation>
+  </tile>
  </tileset>
- <layer name="background" width="20" height="16" visible="0">
+ <layer name="background" width="20" height="16">
   <data>
    <tile gid="34"/>
    <tile gid="33"/>
@@ -115,7 +133,7 @@
    <tile gid="1"/>
    <tile gid="38"/>
    <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="81"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -198,7 +216,7 @@
    <tile gid="54"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="81"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="49"/>
@@ -463,7 +481,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="81"/>
-   <tile gid="89"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -483,9 +500,10 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="89"/>
    <tile gid="0"/>
-   <tile gid="145"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="99"/>
    <tile gid="107"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -503,7 +521,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="89"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="2"/>
    <tile gid="2"/>
