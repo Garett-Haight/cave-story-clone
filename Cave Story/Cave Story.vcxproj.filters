@@ -57,6 +57,9 @@
     <ClCompile Include="animatedTile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="hud.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="graphics.h">
@@ -101,6 +104,9 @@
     <ClInclude Include="animatedTile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="hud.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\x64\Release\MyChar.png">
@@ -111,6 +117,9 @@
     </Image>
     <Image Include="tilesets\NpcSym.png">
       <Filter>Resource Files\tilesets</Filter>
+    </Image>
+    <Image Include="MyChar_old.png">
+      <Filter>Resource Files\sprites</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

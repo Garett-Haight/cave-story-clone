@@ -2,6 +2,8 @@
 #define GAME_H
 #include "player.h"
 #include "level.h"
+#include "hud.h"
+
 class Graphics;
 /*
 Game Class
@@ -20,6 +22,8 @@ private:
 
 	Player _player;
 	Level _level;
+
+	HUD _hud;
 };
 
 #endif

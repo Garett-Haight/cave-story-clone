@@ -7,7 +7,7 @@
 
 namespace {
 	const int FPS = 50;
-	const int MAX_FRAME_TIME = 5 * 1000 / FPS;
+	const int MAX_FRAME_TIME = 1000 / FPS;
 }
 
 Game::Game()
@@ -28,6 +28,7 @@ void Game::gameLoop() {
 
 	this->_level = Level("Map 1", Vector2(100,100), graphics);
 	this->_player = Player(graphics, this->_level.getPlayerSpawnPoint());
+	this->_hud = HUD(graphics, this->_player);
 
 	int LAST_UPDATE_TIME = SDL_GetTicks();
 	// start the game loop
@@ -58,6 +59,21 @@ void Game::gameLoop() {
 			this->_player.MoveRight();
 		}
 
+		if (input.isKeyHeld(SDL_SCANCODE_UP) == true) {
+			this->_player.lookUp();
+		}
+		else if (input.isKeyHeld(SDL_SCANCODE_DOWN) == true) {
+			this->_player.lookDown();
+		}
+
+		if (input.wasKeyReleased(SDL_SCANCODE_UP) == true) {
+			this->_player.stopLookingUp();
+		}
+
+		if (input.wasKeyReleased(SDL_SCANCODE_DOWN) == true) {
+			this->_player.stopLookingDown();
+		}
+
 		if (input.wasKeyPressed(SDL_SCANCODE_Z) == true) {
 			this->_player.jump();
 		}
@@ -80,12 +96,16 @@ void Game::draw(Graphics &graphics) {
 	this->_level.draw(graphics);
 	this->_player.draw(graphics);
 
+	this->_hud.draw(graphics);
+
 	graphics.flip();
 }
 
 void Game::update(float elapsedTime) {
 	this->_player.update(elapsedTime);
 	this->_level.update(elapsedTime);
+
+	this->_hud.update(elapsedTime);
 
 	// Check collisions
 	std::vector<Rectangle> others;
