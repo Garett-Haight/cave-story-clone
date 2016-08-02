@@ -4,6 +4,7 @@
 #include "animatedSprite.h"
 #include "slope.h"
 #include "globals.h"
+#include "level.h"
 
 
 class Player : public AnimatedSprite
@@ -65,6 +66,7 @@ public:
 
 	void handleTileCollisions(std::vector<Rectangle> &other);
 	void handleSlopeCollisions(std::vector<Slope> &others);
+	void handleDoorCollisions(std::vector<Door> &others, Level &level, Graphics &graphics);
 
 	const float getX() const;
 	const float getY() const;

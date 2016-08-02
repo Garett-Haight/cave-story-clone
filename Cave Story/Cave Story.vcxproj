@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="animatedSprite.h" />
     <ClInclude Include="animatedTile.h" />
+    <ClInclude Include="door.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="globals.h" />
@@ -175,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="maps\Map 1.tmx" />
+    <None Include="maps\map2.tmx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

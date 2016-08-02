@@ -107,6 +107,9 @@
     <ClInclude Include="hud.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="door.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\x64\Release\MyChar.png">
@@ -124,6 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="maps\Map 1.tmx">
+      <Filter>Resource Files\maps</Filter>
+    </None>
+    <None Include="maps\map2.tmx">
       <Filter>Resource Files\maps</Filter>
     </None>
   </ItemGroup>
