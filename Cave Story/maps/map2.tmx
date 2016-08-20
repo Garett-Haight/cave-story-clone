@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="16" tilewidth="16" tileheight="16" nextobjectid="44">
- <tileset firstgid="1" name="PrtCave" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="16" tilewidth="16" tileheight="16" nextobjectid="49">
+ <tileset firstgid="1" name="PrtCave" tilewidth="16" tileheight="16" tilecount="80" columns="16">
   <image source="tilesets/PrtCave.png" width="256" height="80"/>
  </tileset>
- <tileset firstgid="81" name="NpcSym" tilewidth="16" tileheight="16">
+ <tileset firstgid="81" name="NpcSym" tilewidth="16" tileheight="16" tilecount="300" columns="20">
   <image source="tilesets/NpcSym.png" width="320" height="240"/>
   <tile id="122">
    <animation>
@@ -711,6 +711,20 @@
   </object>
   <object id="34" x="303.343" y="89.8054">
    <polyline points="0,0 -123.399,59.2051"/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#5500ff" name="enemies">
+  <object id="44" name="bat" x="111.333" y="127.333" width="7" height="6.66667">
+   <ellipse/>
+  </object>
+  <object id="45" name="bat" x="197.333" y="47.3333" width="7.33333" height="7.33333">
+   <ellipse/>
+  </object>
+  <object id="46" name="bat" x="219" y="77.6667" width="8" height="8">
+   <ellipse/>
+  </object>
+  <object id="47" name="bat" x="280.667" y="25.6667" width="8" height="8">
+   <ellipse/>
   </object>
  </objectgroup>
 </map>

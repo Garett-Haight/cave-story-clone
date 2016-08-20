@@ -13,6 +13,9 @@
 
 
 class Graphics;
+class Enemy; 
+class Player;
+
 struct SDL_Texture;
 struct SDL_Rect;
 struct Tileset;
@@ -24,12 +27,13 @@ public:
 	Level(std::string mapName, Graphics &graphics);
 	~Level();
 
-	void update(int elapsedTime);
+	void update(int elapsedTime, Player &player);
 	void draw(Graphics &graphics);
 
 	std::vector<Rectangle> checkTileCollisions(const Rectangle &other);
 	std::vector<Slope> checkSlopeCollisions(const Rectangle &other);
 	std::vector<Door> checkDoorCollisions(const Rectangle &other);
+	std::vector<Enemy*> checkEnemyCollisions(const Rectangle &other);
 
 	const Vector2 getPlayerSpawnPoint() const;
 private:
@@ -50,6 +54,8 @@ private:
 	std::vector<AnimatedTileInfo> _animatedTileInfos;
 
 	std::vector<Door> _doorList;
+
+	std::vector<Enemy*> _enemies;
 
 	void loadMap(std::string mapName, Graphics &graphics);
 	Vector2 getTilesetPosition(Tileset tls, int gid, int tileWidth, int tileHeight);

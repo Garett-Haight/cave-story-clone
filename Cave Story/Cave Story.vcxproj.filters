@@ -60,6 +60,9 @@
     <ClCompile Include="hud.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="graphics.h">
@@ -110,6 +113,9 @@
     <ClInclude Include="door.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\x64\Release\MyChar.png">
@@ -122,6 +128,9 @@
       <Filter>Resource Files\tilesets</Filter>
     </Image>
     <Image Include="MyChar_old.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="NpcCemet.png">
       <Filter>Resource Files\sprites</Filter>
     </Image>
   </ItemGroup>

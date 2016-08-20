@@ -2,6 +2,8 @@
 #include "graphics.h"
 #include "utils.h"
 #include "tinyxml2.h"
+#include "player.h"
+#include "enemy.h"
 
 #include <SDL.h>
 
@@ -352,6 +354,23 @@ void Level::loadMap(std::string mapName, Graphics &graphics) {
 					}
 				}
 			}
+			else if (ss.str() == "enemies") {
+				float x, y;
+				XMLElement* pObject = pObjectGroup->FirstChildElement("object");
+				if (pObject != NULL) {
+					while (pObject) {
+						x = pObject->FloatAttribute("x");
+						y = pObject->FloatAttribute("y");
+						const char* name = pObject->Attribute("name");
+						std::stringstream ss;
+						ss << name;
+						if (ss.str() == "bat") {
+							this->_enemies.push_back(new Bat(graphics, Vector2(std::floor(x) * globals::SPRITE_SCALE, std::floor(y) * globals::SPRITE_SCALE)));
+						}
+						pObject = pObject->NextSiblingElement("object");
+					}
+				}
+			}
 			// Other object groups will go here
 
 			pObjectGroup = pObjectGroup->NextSiblingElement("objectgroup");
@@ -361,9 +380,13 @@ void Level::loadMap(std::string mapName, Graphics &graphics) {
 
 }	
 
-void Level::update(int elapsedTime) {
+void Level::update(int elapsedTime, Player &player) {
 	for (int i = 0; i < this->_animatedTileList.size(); i++) {
 		this->_animatedTileList.at(i).update(elapsedTime);
+	}
+
+	for (int i = 0; i < this->_enemies.size(); i++) {
+		this->_enemies.at(i)->update(elapsedTime, player);
 	}
 }
 
@@ -375,6 +398,10 @@ void Level::draw(Graphics &graphics) {
 
 	for (int i = 0; i < this->_animatedTileList.size(); i++) {
 		this->_animatedTileList.at(i).draw(graphics);
+	}
+
+	for (int i = 0; i < this->_enemies.size(); i++) {
+		this->_enemies.at(i)->draw(graphics);
 	}
 }
 
@@ -411,6 +438,15 @@ std::vector<Door> Level::checkDoorCollisions(const Rectangle &other) {
 	return others;
 }
 
+std::vector<Enemy*> Level::checkEnemyCollisions(const Rectangle &other) {
+	std::vector<Enemy*> others;
+	for (int i = 0; i < this->_enemies.size(); i++) {
+		if (this->_enemies.at(i)->getBoundingBox().collidesWith(other)) {
+			others.push_back(this->_enemies.at(i));
+		}
+	}
+	return others;
+}
 const Vector2 Level::getPlayerSpawnPoint() const {
 	return this->_spawnPoint;
 }
@@ -428,3 +464,5 @@ Vector2 Level::getTilesetPosition(Tileset tls, int gid, int tileWidth, int tileH
 	Vector2 finalTilesetPosition = Vector2(tsxx, tsyy);
 	return finalTilesetPosition;
 }
+
+
